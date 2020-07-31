@@ -14,6 +14,21 @@
 
 ## Update
   
+- 20200801
+  - 基于原作者的设计，修改了配置文件，给予无外网订阅需求的环境，在产生的target链接前部加入你自己搭建的后端IP
+  
+  ```shell
+  http://你的后端IP：端口/sub?
+  ```
+  
+  即可构成家庭局域网专用的订阅转换IP
+  本次修改可直接使用Docker部署
+  
+  ```shell
+  docker pull luoxingchen/subweb-local:nourls
+  docker run -d -p 80:80 --restart always --name localsubweb luoxingchen/subweb-local:nourls
+  ```
+
 - 20200324
   - 现在你可以使用 docker-compose 启动前端及短链接服务，服务端口及其他参数请自行在 .env 中配置。
 
@@ -25,6 +40,7 @@
 
   docker-compose up -d
   ```
+ 
 
 - 20200309
   
